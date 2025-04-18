@@ -89,7 +89,7 @@ void loop()
 {
 }
 ```
-Pastiin ganti MACnya ke MAC ESP 32mu ya : )
+Pastiin ganti MACnya ke MAC ESP-32mu ya : ) dan jangan lupa juga pastikan tidak ada error saat upload program
 
 ## Setup Kontroller PS3
 
@@ -107,5 +107,20 @@ Pastiin ganti MACnya ke MAC ESP 32mu ya : )
 2. Kemudian Kalian Colok Stick KW kalian ke laptop dan akan muncul notifikasi di pojok bawah layar :
 ![Notif](images/notif.png)
 
-3. Dan Akan muncul MAC Adress di SCP Pair Tool. Dimana Local adalah MAC dari stick PS dan Remote Adalah mac yang akan diisi oleh MAC dari ESP-32
-![Notif](images/mac_muncul.png)
+3. Dan Akan muncul MAC Adress di SCP Pair Tool. Dimana Local adalah MAC dari stick PS dan Remote Adalah mac yang akan diisi oleh MAC dari ESP-32. Jika tidak muncul Kalian bisa press **PS Button dan Start** bersamaan saat stick sudah terkoneksi ke latop dengan kabel mini usb.
+![mac muncul](images/mac_muncul.png)
+
+4. Untuk menggganti MAC Remote kalian bisa Masukkan MAC Adreee esp kalian ke input box dan click SEt untuk mengubah MAC dan nanti akam menajdi seperti berikut : ![set_mac](images/set_mac.png)
+
+4. Jika sudah lepas kabel ps3 dengan laptop.
+
+## Cek Koneksi 
+Untuk cek koneksi buka serial monitor kalian kemudian pada esp kalian pence tombol **rst** dan untuk stick ps kalian press **PS Button**. jika koneksi berhasil akan mucul serial seperti berikut. dan saat kalain menekan button di kanan datanya akan diterima oleh esp32 
+: ![Koneksi Berhasil](images/koneksi_berhasil.png)
+
+
+
+
+
+
+Selamt kalian sudha berhasil konelsi Kontroller PS3 KW Super kalain dengan ESP-32 seperti kata pepatah tidak ada yang tidak mungkin selama tidak melanggar hukum alam. 
