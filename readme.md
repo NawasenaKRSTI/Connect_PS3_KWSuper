@@ -19,5 +19,7 @@ _(Scam Cik!! Tapi bisa dipakai kalau tahu caranya 😎)_
 ---
 ## Setup ESP-32
 
-### 1. Install Librarry PS3 **Controller Host** by **Jeffrey van Pernis**
+### 1. Install Librarry PS3 Controller Host by Jeffrey van Pernis
+Library ini berguna untuk memudahkan kita melakukan interfacing Bluetooth PS3
 
+### 2. 
