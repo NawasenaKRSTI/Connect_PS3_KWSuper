@@ -17,5 +17,7 @@ _(Scam Cik!! Tapi bisa dipakai kalau tahu caranya 😎)_
    [https://github.com/nefarius/ScpToolkit/releases/tag/v1.7.277.16103-BETA](https://github.com/nefarius/ScpToolkit/releases/tag/v1.7.277.16103-BETA)
 
 ---
+## Setup ESP-32
 
+### 1. Install Librarry PS3 **Controller Host** by **Jeffrey van Pernis**
 
