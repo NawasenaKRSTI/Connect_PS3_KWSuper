@@ -102,10 +102,10 @@ Pastiin ganti MACnya ke MAC ESP 32mu ya : )
 
 ### Setup MAC Bluetooth Kontroller
 1. Kalian Search di windows **ScpToolkit Bluetooth Pair Utility (legacy)** Jika sudah akan muncul tampilan berikut :
-![Tampilan Awal Aplikasii](tampilan_awal/.png)
+![Tampilan Awal Aplikasii](images/tampilan_awal.png)
 
 2. Kemudian Kalian Colok Stick KW kalian ke laptop dan akan muncul notifikasi di pojok bawah layar :
-![Notif](notif/.png)
+![Notif](images/notif.png)
 
 3. Dan Akan muncul MAC Adress di SCP Pair Tool. Dimana Local adalah MAC dari stick PS dan Remote Adalah mac yang akan diisi oleh MAC dari ESP-32
-![Notif](mac_muncul/.png)
+![Notif](images/mac_muncul.png)
