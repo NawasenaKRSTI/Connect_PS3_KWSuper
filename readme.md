@@ -95,4 +95,4 @@ Pastiin ganti MACnya ke MAC ESP 32mu ya : )
 
 ### Installasi SCP Toolkit
 1. Kalian Jalankan ScpToolkit_Setup.exe dan akan muncul tampilan dibwah. kalian bisa pilih dimana mau install appnya dan bisa di checklist I agree kemuadn press Next
-![Tampilan Awal Instalasi](images/install_1.png)
+![Tampilan Awal Instalasi](images/Install_1.png)
