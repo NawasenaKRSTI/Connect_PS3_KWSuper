@@ -1,126 +1,159 @@
-# Connect ESP32 ke Kontroller PS3 KW Super
+# 🎮 ESP32 + PS3 KW Super Controller
 
-Repository ini memberikan tutorial cara mengakali koneksi kontroler PS3 yang bisa kamu dapatkan hanya dengan harga 50k di marketplace.  
-_(Scam Cik!! Tapi bisa dipakai kalau tahu caranya 😎)_
+[![ESP32](https://img.shields.io/badge/Board-ESP32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
+[![Arduino IDE](https://img.shields.io/badge/IDE-Arduino-orange.svg)](https://www.arduino.cc/en/software)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+Tutorial ini menunjukkan cara **menghubungkan ESP32 dengan stick PS3 KW Super** — stick 50 ribuan yang kamu temuin di marketplace tapi ternyata bisa dipakai juga kalau tau caranya 😎
+
+> _"Scam Cik, tapi bisa dibikin jalan!"_
+
+---
+
+## 🧭 Table of Contents
+
+- [🧰 Alat dan Bahan](#-alat-dan-bahan)
+- [⚙️ Setup ESP32](#️-setup-esp32)
+  - [1. Install Library PS3](#1-install-library-ps3-controller-host-by-jeffrey-van-pernis)
+  - [2. Cek MAC Address ESP32](#2-cek-mac-address-bluetooth-esp32)
+- [🔌 Program Koneksi ke PS3](#-program-koneksi-ke-ps3)
+- [🛠️ Setup Kontroller PS3](#️-setup-kontroller-ps3)
+  - [1. Install SCP Toolkit](#1-installasi-scp-toolkit)
+  - [2. Pairing MAC Stick ke ESP32](#2-setup-mac-bluetooth-kontroller)
+- [✅ Cek Koneksi](#-cek-koneksi)
+- [🏁 Penutup](#-penutup)
 
 ---
 
 ## 🧰 Alat dan Bahan
 
-1. 🎮 Kontroller PS3 **KW Super** yang kamu dapatkan dari marketplace.
-2. Kabel Mini USB Buat nyolo psnya ke laptop 
-3. 💻 **Arduino IDE**  
-   (Pastikan sudah terinstal dan sudah ditambahkan **board ESP32**)
-4. 📟 **ESP32**  
-   (Gunakan seri yang memiliki **Bluetooth**)
-5. 🧰 **SCP Toolkit**  
-   Bisa didapatkan di[github ScpToolkit](https://github.com/nefarius/ScpToolkit/releases/tag/v1.7.277.16103-BETA) Kalau windows download .exe aja ya.
-
-   
+- 🎮 Stick PS3 **KW Super** dari marketplace
+- 🔌 Kabel Mini USB
+- 💻 **Arduino IDE** (plus Board ESP32 sudah ditambahkan)
+- 📟 **ESP32** (pastikan ada Bluetooth-nya)
+- 🧰 **SCP Toolkit**  
+  ➤ [Download dari GitHub](https://github.com/nefarius/ScpToolkit/releases/tag/v1.7.277.16103-BETA)
 
 ---
-## Setup ESP-32
 
-### 1. Install Librarry PS3 Controller Host by Jeffrey van Pernis
-Library ini berguna untuk memudahkan kita melakukan interfacing Bluetooth PS3
+## ⚙️ Setup ESP32
 
-### 2. Cek Mac Address Bluetooth ESP-32
-Untuk ini kamu bbisa gunakan program berikut :
+### 1. Install Library PS3 Controller Host by Jeffrey van Pernis
+
+> Cari dan install melalui Library Manager Arduino IDE:  
+> `Ps3Controller by Jeffrey van Pernis`
+
+### 2. Cek MAC Address Bluetooth ESP32
+
+Upload kode berikut ke ESP32 kamu:
+
 ```cpp
 #include <Ps3Controller.h>
 
-void setup()
-{
-    Serial.begin(115200);
-    Ps3.begin();
+void setup() {
+  Serial.begin(115200);
+  Ps3.begin();
 
-    String address = Ps3.getAddress();
-
-    Serial.print("The ESP32's Bluetooth MAC address is: ");
-    Serial.println(address);
+  String address = Ps3.getAddress();
+  Serial.print("The ESP32's Bluetooth MAC address is: ");
+  Serial.println(address);
 }
 
-void loop()
-{
-
-}
+void loop() {}
 ```
-Nanti bakal keliatan kaya dibawah kalau udah di upload. pastikan buat nginget MACnya catat bila perlu :
-![Tampilan Serial Monitor](images/cek_mac.png)
 
-### Program Koneksi Ke PS3
-Nah tadi kan udah ada suruhan PS3 Controller Host by Jeffrey van Pernis untuk program koneksinya bisa coba pakai program dibawah
+📝 Buka **Serial Monitor** dan **catat MAC address** yang ditampilkan  
+📸 ![Cek MAC](images/cek_mac.png)
+
+---
+
+## 🔌 Program Koneksi ke PS3
+
+Upload kode ini ke ESP32 (ganti MAC sesuai MAC address ESP32 kamu):
+
 ```cpp
 #include <Ps3Controller.h>
 
-void notify()
-{
-    if( Ps3.data.button.cross ){
-        Serial.println("Pressing the cross button");
-    }
-
-    if( Ps3.data.button.square ){
-        Serial.println("Pressing the square button");
-    }
-
-    if( Ps3.data.button.triangle ){
-        Serial.println("Pressing the triangle button");
-    }
-
-    if( Ps3.data.button.circle ){
-        Serial.println("Pressing the circle button");
-    }
+void notify() {
+  if (Ps3.data.button.cross)    Serial.println("Pressing the cross button");
+  if (Ps3.data.button.square)   Serial.println("Pressing the square button");
+  if (Ps3.data.button.triangle) Serial.println("Pressing the triangle button");
+  if (Ps3.data.button.circle)   Serial.println("Pressing the circle button");
 }
 
-void onConnect(){
-  Serial.println("Connected!.");
+void onConnect() {
+  Serial.println("Connected!");
 }
 
-void setup()
-{
-    Serial.begin(115200);
-    Ps3.attach(notify);
-    Ps3.attachOnConnect(onConnect);
-    Ps3.begin("78:42:1C:6D:77:B6"); //Ganti MAC Sama MAC Adress ESP kamu
-    Serial.println("Ready.");
+void setup() {
+  Serial.begin(115200);
+  Ps3.attach(notify);
+  Ps3.attachOnConnect(onConnect);
+  Ps3.begin("78:42:1C:6D:77:B6");  // 🛑 Ganti dengan MAC address ESP32 kamu
+  Serial.println("Ready.");
 }
 
-void loop()
-{
-}
+void loop() {}
 ```
-Pastiin ganti MACnya ke MAC ESP-32mu ya : ) dan jangan lupa juga pastikan tidak ada error saat upload program
 
-## Setup Kontroller PS3
+---
 
-### Installasi SCP Toolkit
-1. Kalian Jalankan ScpToolkit_Setup.exe dan akan muncul tampilan dibwah. kalian bisa pilih dimana mau install appnya dan bisa di checklist I agree kemuadn press Next
-![Tampilan Awal Instalasi](images/Install_1.png)
+## 🛠️ Setup Kontroller PS3
 
-2. Yang perlu kalian install hanya Bluetooth Pait Utility ya, untuk yang lain sebbenarnya tidak perlu. tapi ada baiknnya install semua kan. Jika Sudah Click **Install** jika sudah kalian Click **Finish** 
-![Checklist installasi](images/Install_2.png)
+### 1. Installasi SCP Toolkit
 
-### Setup MAC Bluetooth Kontroller
-1. Kalian Search di windows **ScpToolkit Bluetooth Pair Utility (legacy)** Jika sudah akan muncul tampilan berikut :
-![Tampilan Awal Aplikasii](images/tampilan_awal.png)
+1. Jalankan `ScpToolkit_Setup.exe`
+2. Checklist "I agree" dan tekan **Next**  
+   ![Install Step 1](images/Install_1.png)
+3. Pilih **Bluetooth Pair Utility** (opsional: install semua)  
+   ![Install Step 2](images/Install_2.png)
 
-2. Kemudian Kalian Colok Stick KW kalian ke laptop dan akan muncul notifikasi di pojok bawah layar :
-![Notif](images/notif.png)
+### 2. Setup MAC Bluetooth Kontroller
 
-3. Dan Akan muncul MAC Adress di SCP Pair Tool. Dimana Local adalah MAC dari stick PS dan Remote Adalah mac yang akan diisi oleh MAC dari ESP-32. Jika tidak muncul Kalian bisa press **PS Button dan Start** bersamaan saat stick sudah terkoneksi ke latop dengan kabel mini usb.
-![mac muncul](images/mac_muncul.png)
+1. Buka **ScpToolkit Bluetooth Pair Utility (legacy)**  
+   ![Pairing Tool](images/tampilan_awal.png)
 
-4. Untuk menggganti MAC Remote kalian bisa Masukkan MAC Adreee esp kalian ke input box dan click SEt untuk mengubah MAC dan nanti akam menajdi seperti berikut : ![set_mac](images/set_mac.png)
+2. Colok stick ke laptop via kabel mini USB  
+   💬 Akan muncul notifikasi  
+   ![Notifikasi](images/notif.png)
 
-4. Jika sudah lepas kabel ps3 dengan laptop.
+3. Di jendela Pairing akan muncul:
+   - **Local**: MAC stick PS3
+   - **Remote**: MAC target (ESP32 kamu)  
+   ![MAC muncul](images/mac_muncul.png)
 
-## Cek Koneksi 
-Untuk cek koneksi buka serial monitor kalian kemudian pada esp kalian pence tombol **rst** dan untuk stick ps kalian press **PS Button**. jika koneksi berhasil akan mucul serial seperti berikut. dan saat kalain menekan button di kanan datanya akan diterima oleh esp32 
-: ![Koneksi Berhasil](images/koneksi_berhasil.png)
+   > Jika belum muncul, tekan **PS + Start** di stick
 
+4. Masukkan MAC ESP32 kamu ke kolom Remote lalu klik **Set**  
+   ![Set MAC](images/set_mac.png)
 
+5. Lepas kabel dari stick.
 
+---
 
+## ✅ Cek Koneksi
 
+1. Buka Serial Monitor di Arduino IDE
+2. Tekan tombol **RST** di ESP32
+3. Tekan tombol **PS** di stick PS3
 
-Selamt kalian sudha berhasil konelsi Kontroller PS3 KW Super kalain dengan ESP-32 seperti kata pepatah tidak ada yang tidak mungkin selama tidak melanggar hukum alam. 
+🎉 Kalau berhasil, kamu akan lihat teks seperti ini:
+![Koneksi Berhasil](images/koneksi_berhasil.png)
+
+---
+
+## 🏁 Penutup
+
+> **Selamat!** Kamu berhasil menghubungkan stick PS3 KW Super ke ESP32 dengan Bluetooth.
+
+> _"Tidak ada yang tidak mungkin, selama tidak melanggar hukum alam."_
+
+---
+
+## 🪪 Lisensi
+
+Proyek ini menggunakan lisensi [MIT License](LICENSE)
+
+---
+
+```
