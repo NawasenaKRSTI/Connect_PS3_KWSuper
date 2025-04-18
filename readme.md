@@ -91,11 +91,21 @@ void loop()
 ```
 Pastiin ganti MACnya ke MAC ESP 32mu ya : )
 
-## Setup Stick PS
+## Setup Kontroller PS3
 
 ### Installasi SCP Toolkit
 1. Kalian Jalankan ScpToolkit_Setup.exe dan akan muncul tampilan dibwah. kalian bisa pilih dimana mau install appnya dan bisa di checklist I agree kemuadn press Next
 ![Tampilan Awal Instalasi](images/Install_1.png)
 
-2. Yang perlu kalian install hanya Bluetooth Pait Utility ya, untuk yang lain sebbenarnya tidak perlu. tapi ada baiknnya install semua kan.
-![Tampilan Awal Instalasi](images/Install_2.png)
+2. Yang perlu kalian install hanya Bluetooth Pait Utility ya, untuk yang lain sebbenarnya tidak perlu. tapi ada baiknnya install semua kan. Jika Sudah Click **Install** jika sudah kalian Click **Finish** 
+![Checklist installasi](images/Install_2.png)
+
+### Setup MAC Bluetooth Kontroller
+1. Kalian Search di windows **ScpToolkit Bluetooth Pair Utility (legacy)** Jika sudah akan muncul tampilan berikut :
+![Tampilan Awal Aplikasii](tampilan_awal/.png)
+
+2. Kemudian Kalian Colok Stick KW kalian ke laptop dan akan muncul notifikasi di pojok bawah layar :
+![Notif](notif/.png)
+
+3. Dan Akan muncul MAC Adress di SCP Pair Tool. Dimana Local adalah MAC dari stick PS dan Remote Adalah mac yang akan diisi oleh MAC dari ESP-32
+![Notif](mac_muncul/.png)
