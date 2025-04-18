@@ -48,17 +48,53 @@ Tutorial ini menunjukkan cara **menghubungkan ESP32 dengan stick PS3 KW Super** 
 Upload kode berikut ke ESP32 kamu:
 
 ```cpp
-#include <Ps3Controller.h>
-
+#include "esp_bt_main.h"
+#include "esp_bt_device.h"
+ 
+bool initBluetooth()
+{
+  if (!btStart()) {
+    Serial.println("Failed to initialize controller");
+    return false;
+  }
+ 
+  if (esp_bluedroid_init() != ESP_OK) {
+    Serial.println("Failed to initialize bluedroid");
+    return false;
+  }
+ 
+  if (esp_bluedroid_enable() != ESP_OK) {
+    Serial.println("Failed to enable bluedroid");
+    return false;
+  }
+ 
+}
+ 
+void printDeviceAddress() {
+ 
+  const uint8_t* point = esp_bt_dev_get_address();
+ 
+  for (int i = 0; i < 6; i++) {
+ 
+    char str[3];
+ 
+    sprintf(str, "%02X", (int)point[i]);
+    Serial.print(str);
+ 
+    if (i < 5){
+      Serial.print(":");
+    }
+ 
+  }
+}
+ 
 void setup() {
   Serial.begin(115200);
-  Ps3.begin();
-
-  String address = Ps3.getAddress();
-  Serial.print("The ESP32's Bluetooth MAC address is: ");
-  Serial.println(address);
+ 
+  initBluetooth();
+  printDeviceAddress();
 }
-
+ 
 void loop() {}
 ```
 
@@ -74,26 +110,42 @@ Upload kode ini ke ESP32 (ganti MAC sesuai MAC address ESP32 kamu):
 ```cpp
 #include <Ps3Controller.h>
 
-void notify() {
-  if (Ps3.data.button.cross)    Serial.println("Pressing the cross button");
-  if (Ps3.data.button.square)   Serial.println("Pressing the square button");
-  if (Ps3.data.button.triangle) Serial.println("Pressing the triangle button");
-  if (Ps3.data.button.circle)   Serial.println("Pressing the circle button");
+void notify()
+{
+    if( Ps3.data.button.cross ){
+        Serial.println("Pressing the cross button");
+    }
+
+    if( Ps3.data.button.square ){
+        Serial.println("Pressing the square button");
+    }
+
+    if( Ps3.data.button.triangle ){
+        Serial.println("Pressing the triangle button");
+    }
+
+    if( Ps3.data.button.circle ){
+        Serial.println("Pressing the circle button");
+    }
 }
 
-void onConnect() {
-  Serial.println("Connected!");
+void onConnect(){
+  Serial.println("Connected!.");
 }
 
-void setup() {
-  Serial.begin(115200);
-  Ps3.attach(notify);
-  Ps3.attachOnConnect(onConnect);
-  Ps3.begin("78:42:1C:6D:77:B6");  // 🛑 Ganti dengan MAC address ESP32 kamu
-  Serial.println("Ready.");
+void setup()
+{
+    Serial.begin(115200);
+    Ps3.attach(notify);
+    Ps3.attachOnConnect(onConnect);
+    Ps3.begin("78:42:1C:6D:77:B6");
+    Serial.println("Ready.");
 }
 
-void loop() {}
+void loop()
+{
+}
+
 ```
 
 ---
