@@ -22,4 +22,24 @@ _(Scam Cik!! Tapi bisa dipakai kalau tahu caranya 😎)_
 ### 1. Install Librarry PS3 Controller Host by Jeffrey van Pernis
 Library ini berguna untuk memudahkan kita melakukan interfacing Bluetooth PS3
 
-### 2. 
+### 2. Cek Mac Address Bluetooth ESP-32
+Untuk ini kamu bbisa gunakan program berikut :
+```cpp
+#include <Ps3Controller.h>
+
+void setup()
+{
+    Serial.begin(115200);
+    Ps3.begin();
+
+    String address = Ps3.getAddress();
+
+    Serial.print("The ESP32's Bluetooth MAC address is: ");
+    Serial.println(address);
+}
+
+void loop()
+{
+
+}
+```
