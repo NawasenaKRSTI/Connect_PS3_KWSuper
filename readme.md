@@ -138,7 +138,7 @@ void setup()
     Serial.begin(115200);
     Ps3.attach(notify);
     Ps3.attachOnConnect(onConnect);
-    Ps3.begin("78:42:1C:6D:77:B6");
+    Ps3.begin("78:42:1C:6D:77:B6");     //<--Ganti MAC Disini
     Serial.println("Ready.");
 }
 
