@@ -43,5 +43,5 @@ void loop()
 }
 ```
 Nanti bakal keliatan kaya dibawah kalau udah di upload. pastikan buat nginget MACnya catat bila perlu :
-![Tampilan Serial Monitor](images/mec_mac.png)
+![Tampilan Serial Monitor](images/cek_mac.png)
 
