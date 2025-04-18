@@ -13,8 +13,7 @@ _(Scam Cik!! Tapi bisa dipakai kalau tahu caranya 😎)_
 3. 📟 **ESP32**  
    (Gunakan seri yang memiliki **Bluetooth**)
 4. 🧰 **SCP Toolkit**  
-   Bisa didapatkan di:  
-   [github ScpToolkit](https://github.com/nefarius/ScpToolkit/releases/tag/v1.7.277.16103-BETA)
+   Bisa didapatkan di: [github ScpToolkit](https://github.com/nefarius/ScpToolkit/releases/tag/v1.7.277.16103-BETA)
 
 ---
 ## Setup ESP-32
