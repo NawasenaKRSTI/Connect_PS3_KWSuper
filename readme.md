@@ -60,7 +60,7 @@ Tutorial ini menunjukkan cara **menghubungkan ESP32 dengan stick PS3 KW Super** 
 
    > Jika belum muncul, tekan **PS + Start** di stick
 
-4. Masukkan MAC yang kamu inginkan kamu ke kolom Remote lalu klik **Set**  
+4. Masukkan MAC yang kamu inginkan ke kolom Remote lalu klik **Set**  
    ![Set MAC](images/set_mac.png)
 
 5. Lepas kabel dari stick.
