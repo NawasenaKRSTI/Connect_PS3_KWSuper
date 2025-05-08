@@ -13,13 +13,12 @@ Tutorial ini menunjukkan cara **menghubungkan ESP32 dengan stick PS3 KW Super** 
 ## 🧭 Table of Contents
 
 - [🧰 Alat dan Bahan](#-alat-dan-bahan)
-- [⚙️ Setup ESP32](#️-setup-esp32)
-  - [1. Install Library PS3](#1-install-library-ps3-controller-host-by-jeffrey-van-pernis)
-  - [2. Cek MAC Address ESP32](#2-cek-mac-address-bluetooth-esp32)
-- [🔌 Program Koneksi ke PS3](#-program-koneksi-ke-ps3)
 - [🛠️ Setup Kontroller PS3](#️-setup-kontroller-ps3)
   - [1. Install SCP Toolkit](#1-installasi-scp-toolkit)
   - [2. Pairing MAC Stick ke ESP32](#2-setup-mac-bluetooth-kontroller)
+- [⚙️ Setup ESP32](#️-setup-esp32)
+  - [1. Install Library PS3](#1-install-library-ps3-controller-host-by-jeffrey-van-pernis)
+- [🔌 Program Koneksi ke PS3](#-program-koneksi-ke-ps3)
 - [✅ Cek Koneksi](#-cek-koneksi)
 - [🏁 Penutup](#-penutup)
 
@@ -35,77 +34,48 @@ Tutorial ini menunjukkan cara **menghubungkan ESP32 dengan stick PS3 KW Super** 
   ➤ [Download dari GitHub](https://github.com/nefarius/ScpToolkit/releases/tag/v1.7.277.16103-BETA)
 
 ---
+## 🛠️ Setup Kontroller PS3
 
-## ⚙️ Setup ESP32
+### 1. Installasi SCP Toolkit
 
-### 1. Install Library PS3 Controller Host by Jeffrey van Pernis
+1. Jalankan `ScpToolkit_Setup.exe`
+2. Checklist "I agree" dan tekan **Next**  
+   ![Install Step 1](images/Install_1.png)
+3. Pilih **Bluetooth Pair Utility** (opsional: install semua)  
+   ![Install Step 2](images/Install_2.png)
 
-> Cari dan install melalui Library Manager Arduino IDE:  
-> `Ps3Controller by Jeffrey van Pernis`
+### 2. Setup MAC Bluetooth Kontroller
 
-### 2. Cek MAC Address Bluetooth ESP32
+1. Buka **ScpToolkit Bluetooth Pair Utility (legacy)**  
+   ![Pairing Tool](images/tampilan_awal.png)
 
-Upload kode berikut ke ESP32 kamu:
+2. Colok stick ke laptop via kabel mini USB  
+   💬 Akan muncul notifikasi  
+   ![Notifikasi](images/notif.png)
 
-```cpp
-#include "esp_bt_main.h"
-#include "esp_bt_device.h"
- 
-bool initBluetooth()
-{
-  if (!btStart()) {
-    Serial.println("Failed to initialize controller");
-    return false;
-  }
- 
-  if (esp_bluedroid_init() != ESP_OK) {
-    Serial.println("Failed to initialize bluedroid");
-    return false;
-  }
- 
-  if (esp_bluedroid_enable() != ESP_OK) {
-    Serial.println("Failed to enable bluedroid");
-    return false;
-  }
- 
-}
- 
-void printDeviceAddress() {
- 
-  const uint8_t* point = esp_bt_dev_get_address();
- 
-  for (int i = 0; i < 6; i++) {
- 
-    char str[3];
- 
-    sprintf(str, "%02X", (int)point[i]);
-    Serial.print(str);
- 
-    if (i < 5){
-      Serial.print(":");
-    }
- 
-  }
-}
- 
-void setup() {
-  Serial.begin(115200);
- 
-  initBluetooth();
-  printDeviceAddress();
-}
- 
-void loop() {}
-```
+3. Di jendela Pairing akan muncul:
+   - **Local**: MAC stick PS3
+   - **Remote**: MAC target (ESP32 kamu)  
+   ![MAC muncul](images/mac_muncul.png)
 
-📝 Buka **Serial Monitor** dan **catat MAC address** yang ditampilkan  
-📸 ![Cek MAC](images/cek_mac.png)
+   > Jika belum muncul, tekan **PS + Start** di stick
+
+4. Masukkan MAC yang kamu inginkan kamu ke kolom Remote lalu klik **Set**  
+   ![Set MAC](images/set_mac.png)
+
+5. Lepas kabel dari stick.
 
 ---
+## ⚙️ Setup ESP32
+
+### Install Library PS3 Controller Host by Jeffrey van Pernis
+
+> Cari dan install melalui Library Manager Arduino IDE:  
+> PS3 Controller Host by Jeffrey van Pernis`
 
 ## 🔌 Program Koneksi ke PS3
 
-Upload kode ini ke ESP32 (ganti MAC sesuai MAC address ESP32 kamu):
+Upload kode ini ke ESP32 (ganti MAC sesuai MAC address yang kamu setting di PS3):
 
 ```cpp
 #include <Ps3Controller.h>
@@ -147,41 +117,6 @@ void loop()
 }
 
 ```
-
----
-
-## 🛠️ Setup Kontroller PS3
-
-### 1. Installasi SCP Toolkit
-
-1. Jalankan `ScpToolkit_Setup.exe`
-2. Checklist "I agree" dan tekan **Next**  
-   ![Install Step 1](images/Install_1.png)
-3. Pilih **Bluetooth Pair Utility** (opsional: install semua)  
-   ![Install Step 2](images/Install_2.png)
-
-### 2. Setup MAC Bluetooth Kontroller
-
-1. Buka **ScpToolkit Bluetooth Pair Utility (legacy)**  
-   ![Pairing Tool](images/tampilan_awal.png)
-
-2. Colok stick ke laptop via kabel mini USB  
-   💬 Akan muncul notifikasi  
-   ![Notifikasi](images/notif.png)
-
-3. Di jendela Pairing akan muncul:
-   - **Local**: MAC stick PS3
-   - **Remote**: MAC target (ESP32 kamu)  
-   ![MAC muncul](images/mac_muncul.png)
-
-   > Jika belum muncul, tekan **PS + Start** di stick
-
-4. Masukkan MAC ESP32 kamu ke kolom Remote lalu klik **Set**  
-   ![Set MAC](images/set_mac.png)
-
-5. Lepas kabel dari stick.
-
----
 
 ## ✅ Cek Koneksi
 
