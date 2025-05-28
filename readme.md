@@ -58,7 +58,7 @@ Desain sistem melibatkan:
 
 * ESP32 dengan modul Bluetooth sebagai penerima sinyal dari stik PS3.
 * Stik PS3 KW Super yang terhubung melalui Bluetooth ke ESP32.
-* Diagram arsitektur dan blok sistem dapat ditambahkan di folder `images`.([GitHub][1])
+* Diagram arsitektur dan blok sistem dapat ditambahkan di folder.
 
 ---
 
