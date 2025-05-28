@@ -38,14 +38,14 @@ Struktur direktori proyek untuk memudahkan navigasi:
 
 Tabel berikut merinci tools dan teknologi utama yang digunakan dalam riset ini:
 
-| Komponen           | Deskripsi               |                                       |
-| ------------------ | ----------------------- | ------------------------------------- |
-| Platform           | ESP32                   |                                       |
-| Bahasa Pemrograman | C++                     |                                       |
-| IDE                | Arduino IDE             |                                       |
-| Komunikasi         | Bluetooth               |                                       |
-| Dependensi         | Library PS3 untuk ESP32 |                                       |
-| Framework          | Arduino Framework       | ([GitHub][1], [Gist][2], [GitHub][3]) |
+| Komponen           | Deskripsi               |
+| ------------------ | ----------------------- | 
+| Platform           | ESP32                   |                                     
+| Bahasa Pemrograman | C++                     |                                     
+| IDE                | Arduino IDE             |                                     
+| Komunikasi         | Bluetooth               |                                     
+| Dependensi         | Library PS3 untuk ESP32 |                                      
+| Framework          | Arduino Framework       | 
 
 * Menggunakan SCP Toolkit untuk pairing stik PS3 dengan ESP32.
 * Implementasi kode pada ESP32 untuk menerima dan memproses input dari stik.([GitHub][1])
