@@ -3,7 +3,7 @@
 * **Tim/Divisi:** KRSTI / NAWASENA
 * **Tipe Perangkat:** ESP32
 * **Tanggal Mulai - Selesai:** 12/04/2025 – 27/04/2025
-* **Status:** 🧪 *Eksperimen*
+* **Status:** ✅ *Selesai*
 
 ---
 
