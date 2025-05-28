@@ -2,7 +2,7 @@
 
 * **Tim/Divisi:** KRSTI / NAWASENA
 * **Tipe Perangkat:** ESP32
-* **Tanggal Mulai - Selesai:** \[Tanggal mulai] - \[Tanggal selesai]
+* **Tanggal Mulai - Selesai:** 12/04/2025 – 27/04/2025
 * **Status:** 🧪 *Eksperimen*
 
 ---
@@ -92,8 +92,8 @@ Hasil eksperimen menunjukkan bahwa:([GitHub][1])
 
 ## 🕒 Riwayat Revisi
 
-| Versi | Tanggal    | Deskripsi Perubahan | Penulis |                       |
+| Versi | Tanggal    | Deskripsi Perubahan | Penulis | Email                |
 | ----- | ---------- | ------------------- | ------- | --------------------- |
-| 1.0   | \[Tanggal] | Dokumentasi awal    | \[Nama] |                       |
-| 1.1   | \[Tanggal] | Penambahan analisis | \[Nama] | ([Stack Overflow][4]) |
+| 1.0   | 12/04/2025 | Dokumentasi awal    | WenaHarle | madewena0403@gmail.com    |
+| 1.1   | 27/04/2025 | Penambahan analisis | WenaHarle | madewena0403@gmail.com  |
 
