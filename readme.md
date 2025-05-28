@@ -9,7 +9,7 @@
 
 ## 📚 Latar Belakang
 
-Proyek ini bertujuan untuk menghubungkan ESP32 dengan stik PS3 KW Super, sebuah stik murah yang tersedia di pasaran. Meskipun harganya terjangkau, stik ini dapat digunakan secara efektif jika dikonfigurasi dengan benar.([GitHub][1])
+Proyek ini bertujuan untuk menghubungkan ESP32 dengan stik PS3 KW Super, sebuah stik murah yang tersedia di pasaran. Meskipun harganya terjangkau, stik ini dapat digunakan secara efektif jika dikonfigurasi dengan benar.
 
 ---
 
