@@ -90,10 +90,6 @@ Hasil pengujian menunjukkan bahwa stik PS3 KW Super dapat terhubung dengan ESP32
 
 | Versi | Tanggal    | Deskripsi Perubahan    | Penulis              |
 | ----- | ---------- | ---------------------- | -------------------- |
-| 1.0   | 2025-05-28 | Draft awal dokumentasi | Tim Kendali Nawasena |
-
----
-
-Dokumen ini disusun berdasarkan informasi yang tersedia di repositori [Connect\_PS3\_KWSuper](https://github.com/NawasenaKRSTI/Connect_PS3_KWSuper). Untuk informasi lebih lanjut atau kontribusi, silakan kunjungi repositori tersebut.
+| 1.0   | 2025-05-01 | Draft awal dokumentasi | WenaHarle |
 
 ---
