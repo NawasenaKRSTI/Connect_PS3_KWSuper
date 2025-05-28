@@ -48,7 +48,7 @@ Tabel berikut merinci tools dan teknologi utama yang digunakan dalam riset ini:
 | Framework          | Arduino Framework       | 
 
 * Menggunakan SCP Toolkit untuk pairing stik PS3 dengan ESP32.
-* Implementasi kode pada ESP32 untuk menerima dan memproses input dari stik.([GitHub][1])
+* Implementasi kode pada ESP32 untuk menerima dan memproses input dari stik.
 
 ---
 
@@ -68,13 +68,13 @@ Proses pengujian meliputi:
 
 * Pairing stik PS3 dengan ESP32 menggunakan SCP Toolkit.
 * Mengunggah firmware ke ESP32 dan mengamati respons terhadap input dari stik.
-* Mencatat kestabilan koneksi dan responsivitas sistem.([GitHub][1])
+* Mencatat kestabilan koneksi dan responsivitas sistem.
 
 ---
 
 ## 📊 Analisis & Pembahasan
 
-Hasil eksperimen menunjukkan bahwa:([GitHub][1])
+Hasil eksperimen menunjukkan bahwa:
 
 * Stik PS3 KW Super dapat terhubung dengan ESP32 melalui Bluetooth.
 * Respons sistem terhadap input cukup stabil, meskipun terdapat beberapa delay yang perlu dioptimalkan.
@@ -86,7 +86,7 @@ Hasil eksperimen menunjukkan bahwa:([GitHub][1])
 
 * Tujuan utama riset telah tercapai dengan berhasilnya koneksi antara ESP32 dan stik PS3 KW Super.
 * Kontribusi utama adalah dokumentasi langkah-langkah koneksi dan implementasi kode pada ESP32.
-* Rencana selanjutnya meliputi optimasi kode untuk mengurangi delay dan pengujian dengan berbagai jenis stik PS3 lainnya.([GitHub][1])
+* Rencana selanjutnya meliputi optimasi kode untuk mengurangi delay dan pengujian dengan berbagai jenis stik PS3 lainnya.
 
 ---
 
