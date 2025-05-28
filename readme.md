@@ -1,95 +1,99 @@
-**Judul Proyek:**
-Integrasi Stik PS3 KW Super dengan ESP32 melalui Koneksi Bluetooth untuk Kendali Robotika
+## 📘 Tentang Riset
 
-**Tim:**
-Nawasena – Brawijaya Robotic
-
-**Deskripsi Singkat:**
-Proyek ini bertujuan untuk menghubungkan stik PS3 KW Super dengan mikrokontroler ESP32 menggunakan koneksi Bluetooth, memungkinkan kendali nirkabel pada aplikasi robotika.
+* **Tim/Divisi:** KRSTI / NAWASENA
+* **Tipe Perangkat:** ESP32
+* **Tanggal Mulai - Selesai:** \[Tanggal mulai] - \[Tanggal selesai]
+* **Status:** 🧪 *Eksperimen*
 
 ---
 
-## 1. 📚 Latar Belakang
+## 📚 Latar Belakang
 
-Penggunaan stik PS3 sebagai perangkat input dalam sistem robotika menawarkan solusi ekonomis dan praktis. Namun, stik PS3 KW Super, yang banyak tersedia di pasaran dengan harga terjangkau, seringkali menghadapi kendala kompatibilitas. Proyek ini bertujuan untuk mengatasi tantangan tersebut dengan mengembangkan metode koneksi yang andal antara stik PS3 KW Super dan ESP32.
-
----
-
-## 2. 🎯 Tujuan
-
-* Mengembangkan metode koneksi antara stik PS3 KW Super dan ESP32 melalui Bluetooth.
-* Mengintegrasikan stik PS3 sebagai perangkat input dalam sistem kendali robotika.
-* Menyediakan panduan praktis bagi pengguna lain untuk mereplikasi proses ini.
+Proyek ini bertujuan untuk menghubungkan ESP32 dengan stik PS3 KW Super, sebuah stik murah yang tersedia di pasaran. Meskipun harganya terjangkau, stik ini dapat digunakan secara efektif jika dikonfigurasi dengan benar.([GitHub][1])
 
 ---
 
-## 3. 🔬 Metodologi
+## 🎯 Tujuan
 
-* **Perangkat Keras:**
-
-  * Stik PS3 KW Super
-  * ESP32 dengan modul Bluetooth
-  * Kabel Mini USB
-
-* **Perangkat Lunak:**
-
-  * Arduino IDE dengan dukungan board ESP32
-  * SCP Toolkit untuk pairing stik PS3
-  * Library PS3 untuk ESP32
-
-* **Langkah-langkah:**
-
-  1. Menginstal SCP Toolkit dan melakukan pairing stik PS3 dengan ESP32.
-  2. Menginstal library PS3 pada Arduino IDE.
-  3. Mengunggah kode program ke ESP32 untuk menghubungkan dan membaca input dari stik PS3.
+* Membuat koneksi antara ESP32 dan stik PS3 KW Super melalui Bluetooth.
+* Mengembangkan firmware pada ESP32 untuk menerima input dari stik PS3.
+* Menguji kestabilan dan responsivitas koneksi antara perangkat.
 
 ---
 
-## 4. ⚙️ Perancangan Sistem
+## 📁 Struktur Folder
 
-Sistem terdiri dari stik PS3 KW Super yang terhubung secara nirkabel ke ESP32 melalui Bluetooth. ESP32 menerima input dari stik PS3 dan dapat digunakan untuk mengendalikan aktuator atau sistem robotika lainnya.
+Struktur direktori proyek untuk memudahkan navigasi:
 
----
-
-## 5. 🧪 Eksperimen & Evaluasi
-
-* **Pengujian Koneksi:**
-
-  * Memastikan stik PS3 dapat terhubung ke ESP32 dan mengirimkan data input.
-  * Mengamati stabilitas koneksi dan responsivitas input.
-
-* **Evaluasi:**
-
-  * Menilai keandalan koneksi dalam berbagai kondisi.
-  * Menguji kompatibilitas dengan berbagai model stik PS3 KW Super.
+```
+📦 Connect_PS3_KWSuper
+├── 📂 images             → Gambar pendukung
+├── 📜 LICENSE            → Lisensi MIT
+└── 📜 readme.md          → Dokumentasi proyek
+```
 
 ---
 
-## 6. 📊 Analisis & Pembahasan
+## 🔬 Metodologi
 
-Hasil pengujian menunjukkan bahwa stik PS3 KW Super dapat terhubung dengan ESP32 melalui Bluetooth dengan menggunakan SCP Toolkit dan library PS3 yang sesuai. Namun, beberapa model stik mungkin memerlukan penyesuaian tambahan untuk memastikan kompatibilitas penuh.
+Tabel berikut merinci tools dan teknologi utama yang digunakan dalam riset ini:
 
----
+| Komponen           | Deskripsi               |                                       |
+| ------------------ | ----------------------- | ------------------------------------- |
+| Platform           | ESP32                   |                                       |
+| Bahasa Pemrograman | C++                     |                                       |
+| IDE                | Arduino IDE             |                                       |
+| Komunikasi         | Bluetooth               |                                       |
+| Dependensi         | Library PS3 untuk ESP32 |                                       |
+| Framework          | Arduino Framework       | ([GitHub][1], [Gist][2], [GitHub][3]) |
 
-## 7. ✅ Kesimpulan & Rencana Lanjut
-
-* **Kesimpulan:**
-
-  * Metode yang dikembangkan berhasil menghubungkan stik PS3 KW Super dengan ESP32 melalui Bluetooth.
-  * Sistem ini dapat digunakan sebagai solusi kendali nirkabel dalam aplikasi robotika.
-
-* **Rencana Lanjut:**
-
-  * Mengembangkan antarmuka pengguna untuk konfigurasi stik.
-  * Menguji integrasi dengan berbagai platform robotika.
-  * Menyusun dokumentasi lebih lanjut untuk mendukung replikasi oleh pengguna lain.
+* Menggunakan SCP Toolkit untuk pairing stik PS3 dengan ESP32.
+* Implementasi kode pada ESP32 untuk menerima dan memproses input dari stik.([GitHub][1])
 
 ---
 
-## 8. 🕒 Riwayat Revisi
+## ⚙️ Perancangan Sistem
 
-| Versi | Tanggal    | Deskripsi Perubahan    | Penulis              |
-| ----- | ---------- | ---------------------- | -------------------- |
-| 1.0   | 2025-05-01 | Draft awal dokumentasi | WenaHarle |
+Desain sistem melibatkan:
+
+* ESP32 dengan modul Bluetooth sebagai penerima sinyal dari stik PS3.
+* Stik PS3 KW Super yang terhubung melalui Bluetooth ke ESP32.
+* Diagram arsitektur dan blok sistem dapat ditambahkan di folder `images`.([GitHub][1])
 
 ---
+
+## 🧪 Eksperimen & Evaluasi
+
+Proses pengujian meliputi:
+
+* Pairing stik PS3 dengan ESP32 menggunakan SCP Toolkit.
+* Mengunggah firmware ke ESP32 dan mengamati respons terhadap input dari stik.
+* Mencatat kestabilan koneksi dan responsivitas sistem.([GitHub][1])
+
+---
+
+## 📊 Analisis & Pembahasan
+
+Hasil eksperimen menunjukkan bahwa:([GitHub][1])
+
+* Stik PS3 KW Super dapat terhubung dengan ESP32 melalui Bluetooth.
+* Respons sistem terhadap input cukup stabil, meskipun terdapat beberapa delay yang perlu dioptimalkan.
+* Diperlukan penyesuaian lebih lanjut untuk meningkatkan performa dan kompatibilitas.
+
+---
+
+## ✅ Kesimpulan & Rencana Lanjut
+
+* Tujuan utama riset telah tercapai dengan berhasilnya koneksi antara ESP32 dan stik PS3 KW Super.
+* Kontribusi utama adalah dokumentasi langkah-langkah koneksi dan implementasi kode pada ESP32.
+* Rencana selanjutnya meliputi optimasi kode untuk mengurangi delay dan pengujian dengan berbagai jenis stik PS3 lainnya.([GitHub][1])
+
+---
+
+## 🕒 Riwayat Revisi
+
+| Versi | Tanggal    | Deskripsi Perubahan | Penulis |                       |
+| ----- | ---------- | ------------------- | ------- | --------------------- |
+| 1.0   | \[Tanggal] | Dokumentasi awal    | \[Nama] |                       |
+| 1.1   | \[Tanggal] | Penambahan analisis | \[Nama] | ([Stack Overflow][4]) |
+
